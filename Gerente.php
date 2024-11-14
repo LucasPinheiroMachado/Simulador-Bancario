@@ -2,7 +2,7 @@
 require_once 'Usuario.php';
 
 class Gerente extends Usuario{
-    private string $tipo = 'Gerente';
+    private string $tipo = 'gerente';
     private bool $permicaoEspecial = true;
 
     public function getTipo(): string {

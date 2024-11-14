@@ -98,7 +98,7 @@ function criarConta($planos, $contas){
                 $planoEscolhido = $planos[$planoIndex];
                 $usuario = new Cliente($nome, $contato, $cpf);
                 $id = gerarId($contas);
-                $conta = new Conta($id, $usuario, $planoEscolhido, $login, $senha, 'cliente');
+                $conta = new Conta($id, $usuario, $planoEscolhido, $login, $senha);
                 return $conta;
                 break;
 
@@ -119,7 +119,7 @@ function criarConta($planos, $contas){
                 $senha = readline('>');
                 $usuario = new Gerente($nome, $contato, $cpf);
                 $id = gerarId($contas);
-                $conta = new Conta($id, $usuario, null, $login, $senha, 'gerente');
+                $conta = new Conta($id, $usuario, null, $login, $senha);
                 return $conta;
                 break;
 
@@ -285,9 +285,9 @@ $gerente = new Gerente("João", 123456789, "123.456.789-00");
 $cliente1 = new Cliente("Maria", 987654321, "987.654.321-00");
 $cliente2 = new Cliente("José", 112233445, "112.233.445-00");
 
-$conta1 = new Conta(1, $gerente, null, 'loginGerente', 'senhaGerente', 'gerente');
-$conta2 = new Conta(2, $cliente1, $plano2, 'loginMaria', 'senhaMaria', 'cliente');
-$conta3 = new Conta(3, $cliente2, $plano3, 'loginJose', 'senhaJose', 'cliente');
+$conta1 = new Conta(1, $gerente, null, 'loginGerente', 'senhaGerente');
+$conta2 = new Conta(2, $cliente1, $plano2, 'loginMaria', 'senhaMaria');
+$conta3 = new Conta(3, $cliente2, $plano3, 'loginJose', 'senhaJose');
 
 $contas[] = $conta1;
 $contas[] = $conta2;

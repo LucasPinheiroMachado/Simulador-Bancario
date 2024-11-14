@@ -2,7 +2,7 @@
 require_once 'Usuario.php';
 
 class Cliente extends Usuario{
-    private string $tipo = 'Cliente';
+    private string $tipo = 'cliente';
     private bool $permicaoEspecial = false;
 
     public function getTipo(): string {

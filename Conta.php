@@ -9,10 +9,9 @@ class Conta {
     private Plano $plano;
     private string $login;
     private string $senha;
-    private string $tipo;
     private float $saldo = 0.0;
 
-    public function __construct(int $id, Gerente|Cliente $usuario, Plano $plano = null, string $login, string $senha, string $tipo) {
+    public function __construct(int $id, Gerente|Cliente $usuario, Plano $plano = null, string $login, string $senha) {
         $this->id = $id;
         $this->usuario = $usuario;
         if ($plano != null) {
@@ -20,7 +19,6 @@ class Conta {
         }
         $this->login = $login;
         $this->senha = $senha;
-        $this->tipo = $tipo;
     }
 
     public function getId(): int {
@@ -60,7 +58,7 @@ class Conta {
     }
 
     public function getTipo() {
-        return $this->tipo;
+        return $this->usuario->getTipo();
     }
 
     public function getSaldo(): float {
